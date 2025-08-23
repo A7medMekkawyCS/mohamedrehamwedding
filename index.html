@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="forest">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding of Mohamed & Reham</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      background: url('./images/floral-yellow.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      font-family: 'Amiri', serif;
+      color: #fff;
+    }
+    .font-arabic {
+      font-family: 'Amiri', serif;
+      font-size: 2rem;
+      line-height: 2.6;
+    }
+    .font-english {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+    }
+    .card {
+      background: url('./images/flowers.jpg') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .card-body {
+      background: rgba(0, 0, 0, 0.65); /* overlay */
+      border-radius: 1rem;
+      padding: 2.5rem;
+    }
+    .card.full-overlay .card-body {
+      background: rgba(0, 0, 0, 0.65);
+      border-radius: 0; 
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Countdown style */
+    .timer {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .timer-box {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 1rem 1.5rem;
+      border-radius: 1rem;
+      text-align: center;
+      min-width: 70px;
+    }
+    .timer-number {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .timer-label {
+      font-size: 1rem;
+      margin-top: 0.2rem;
+    }
+    @media (max-width: 640px) {
+      .font-arabic {
+        font-size: 1.6rem;
+        line-height: 2.2;
+      }
+      .font-english {
+        font-size: 2.3rem;
+      }
+      .timer {
+        gap: 0.8rem;
+      }
+      .timer-box {
+        padding: 0.7rem 1rem;
+        min-width: 55px;
+      }
+      .timer-number {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎵 Audio Background -->
+  <audio id="bg-music" autoplay loop muted>
+    <source src="./music/song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container mx-auto max-w-2xl p-4 space-y-6">
+
+    <!-- Header -->
+    <div class="card h-96 full-overlay">
+      <div class="card-body text-center">
+        <h2 class="card-title text-6xl font-english">Wedding Celebration</h2>
+        <p class="italic font-english text-4xl mt-4">Mohamed & Reham</p>
+        <p class="text-2xl flex items-center justify-center gap-2 flex-row-reverse mt-3">
+          <i class="fa-solid fa-calendar-days"></i> Saturday, 1 November 2025
+        </p>
+        <!-- Countdown -->
+        <div id="countdown" class="timer"></div>
+      </div>
+    </div>
+
+    <!-- Invitation -->
+    <div class="card">
+      <div class="card-body text-center">
+        <h3 class="text-3xl">It is our honor and pleasure to invite you to the wedding celebration of</h3>
+        <h2 class="text-4xl font-bold mt-2">Mohamed</h2>
+        <p class="text-3xl">&</p>
+        <h2 class="text-4xl font-bold">Reham</h2>
+        <p class="mt-3 text-2xl flex items-center justify-center gap-2 flex-row-reverse">
+          <i class="fa-solid fa-calendar-days"></i> Saturday, 1st of November 2025
+        </p>
+        <p class="text-2xl flex items-center justify-center gap-2 flex-row-reverse">
+          <i class="fa-solid fa-location-dot"></i> قاعة اللؤلؤة
+        </p>
+        <a href="https://www.google.com/maps/place/قاعة+اللؤلؤة/@30.7431192,31.3122635,15z/data=!4m6!3m5!1s0x14f7eb0ce14dce07:0x4959587c27eeee1c!8m2!3d30.7431192!4d31.3122635!16s%2Fg%2F11j2rxrnvb"
+        target="_blank" 
+        class="btn btn-outline mt-4 flex items-center justify-center gap-2 flex-row-reverse text-lg">
+        <i class="fa-solid fa-map-location-dot"></i> See location on Google Maps
+     </a>
+      </div>
+    </div>
+
+    <!-- Quran Verse -->
+    <div class="card">
+      <div class="card-body text-center">
+        <p class="font-arabic">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
+        <p class="mt-3 text-2xl">(الروم: 21)</p>
+      </div>
+    </div>
+
+    <!-- Dua -->
+    <div class="card">
+        <div class="card-body text-center">
+          <h3 class="text-3xl font-bold">A Prayer for the Bride and Groom</h3>
+          <p class="text-2xl mt-2">May Allah bless you, and shower His blessings upon you, and bring you together in goodness.</p>
+  
+          <!-- Google Form Button -->
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe2Lz8Wmrfz0uMYn7SQM8a4f9QrfVtUTdcHdG-ogFuTD0a0lA/viewform?usp=header"
+             target="_blank"
+             class="btn btn-outline mt-6 flex items-center justify-center gap-2 text-lg">
+            <i class="fa-solid fa-pen-to-square"></i> Fill the Guest Form
+          </a>
+        </div>
+      </div>
+  
+
+    <!-- Footer -->
+    <div class="card">
+      <div class="card-body text-center">
+        <p class="mt-4 font-english text-3xl italic">Thank You</p>
+        <p class="text-2xl mt-2">Your presence is our honor. May happiness and joyful occasions fill your lives as well.</p>
+        <p class="font-bold mt-3 font-english text-4xl">Mohamed & Reham</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Countdown Script -->
+<script>
+  // Wedding Date
+  const weddingDate = new Date(2025, 10, 1, 0, 0, 0).getTime();
+  const countdown = document.getElementById("countdown");
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance < 0) {
+      countdown.innerHTML = "<p class='text-2xl'>🎉 The wedding day has arrived 🎉</p>";
+      clearInterval(timer);
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdown.innerHTML = `
+      <div class="timer-box">
+        <span class="timer-number">${days}</span>
+        <span class="timer-label">Days</span>
+      </div>
+      <div class="timer-box">
+        <span class="timer-number">${hours}</span>
+        <span class="timer-label">Hours</span>
+      </div>
+      <div class="timer-box">
+        <span class="timer-number">${minutes}</span>
+        <span class="timer-label">Minutes</span>
+      </div>
+      <div class="timer-box">
+        <span class="timer-number">${seconds}</span>
+        <span class="timer-label">Seconds</span>
+      </div>
+    `;
+  }
+
+  const timer = setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  // 🎵 Enable music on first scroll
+  window.addEventListener("scroll", function() {
+    const audio = document.getElementById("bg-music");
+    if (audio.muted) {
+      audio.muted = false;
+      audio.play();
+    }
+  }, { once: true });
+</script>
+
+</body>
+</html>
