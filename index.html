@@ -4,6 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding of Mohamed & Reham</title>
+
+  <!-- Open Graph (Facebook / WhatsApp) -->
+  <meta property="og:title" content="Wedding of Mohamed & Reham 💍">
+  <meta property="og:description" content="Join us in celebrating the wedding of Mohamed & Reham on 1st November 2025 🎉">
+  <meta property="og:image" content="./images/cover.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mohamedrehamwedding.netlify.app/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wedding of Mohamed & Reham 💍">
+  <meta name="twitter:description" content="Join us in celebrating the wedding of Mohamed & Reham on 1st November 2025 🎉">
+  <meta name="twitter:image" content="./images/cover.jpg">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 
@@ -137,7 +151,7 @@
         <p class="text-xl flex items-center justify-center gap-2 flex-row-reverse">
           <i class="fa-solid fa-location-dot"></i> قاعة اللؤلؤة
         </p>
-        <a href="https://www.google.com/maps/place/قاعة+اللؤلؤة/@30.7431192,31.3122635,15z/data=!4m6!3m5!1s0x14f7eb0ce14dce07:0x4959587c27eeee1c!8m2!3d30.7431192!4d31.3122635!16s%2Fg%2F11j2rxrnvb"
+        <a href="https://www.google.com/maps/place/قاعة+اللؤلؤة/@30.7431192,31.3122635,15z"
         target="_blank" 
         class="btn btn-outline mt-4 flex items-center justify-center gap-2 flex-row-reverse text-base">
         <i class="fa-solid fa-map-location-dot"></i> See location on Google Maps
@@ -148,7 +162,7 @@
     <!-- Quran Verse -->
     <div class="card">
       <div class="card-body text-center">
-        <p class="font-arabic">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
+        <p class="font-arabic">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا...</p>
         <p class="mt-3 text-xl">(الروم: 21)</p>
       </div>
     </div>
@@ -182,7 +196,6 @@
 
   <!-- Countdown Script -->
 <script>
-  // Wedding Date
   const weddingDate = new Date(2025, 10, 1, 0, 0, 0).getTime();
   const countdown = document.getElementById("countdown");
 
@@ -202,29 +215,16 @@
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     countdown.innerHTML = `
-      <div class="timer-box">
-        <span class="timer-number">${days}</span>
-        <span class="timer-label">Days</span>
-      </div>
-      <div class="timer-box">
-        <span class="timer-number">${hours}</span>
-        <span class="timer-label">Hours</span>
-      </div>
-      <div class="timer-box">
-        <span class="timer-number">${minutes}</span>
-        <span class="timer-label">Minutes</span>
-      </div>
-      <div class="timer-box">
-        <span class="timer-number">${seconds}</span>
-        <span class="timer-label">Seconds</span>
-      </div>
+      <div class="timer-box"><span class="timer-number">${days}</span><span class="timer-label">Days</span></div>
+      <div class="timer-box"><span class="timer-number">${hours}</span><span class="timer-label">Hours</span></div>
+      <div class="timer-box"><span class="timer-number">${minutes}</span><span class="timer-label">Minutes</span></div>
+      <div class="timer-box"><span class="timer-number">${seconds}</span><span class="timer-label">Seconds</span></div>
     `;
   }
 
   const timer = setInterval(updateCountdown, 1000);
   updateCountdown();
 
-  // 🎵 Enable music on first scroll
   window.addEventListener("scroll", function() {
     const audio = document.getElementById("bg-music");
     if (audio.muted) {
